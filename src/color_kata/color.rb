@@ -9,17 +9,27 @@ class Color
     self.converter = input.rgb? ? Converter.new(rgb: input_a) : Converter.new(cmyk: input_a)
   end
 
-  def cmyk_values
+  def real_cmyk_values
     return self.converter.cmyk unless self.converter.cmyk.empty?
     self.converter.to_cmyk
   end
 
-  def rgb_values
+  def cmyk_values params={}
+    radix = Radix.new(params[:radix])
+    real_cmyk_values.map {|v| radix.from_cmyk(v)}
+  end
+
+  def real_rgb_values
     return self.converter.rgb unless self.converter.rgb.empty?
     self.converter.to_rgb
   end
 
+  def rgb_values params={}
+    radix = Radix.new(params[:radix])
+    real_rgb_values.map {|v| radix.from_rgb(v)}
+  end
+
   def ==(other_object)
-    cmyk_values == other_object.cmyk_values
+    rgb_values == other_object.rgb_values
   end
 end
