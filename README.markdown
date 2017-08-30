@@ -1,6 +1,6 @@
-# WeaveUp Coding Katas / Pre-Interview Assessments
+# Coding Katas / Pre-Interview Assessments
 
-Thanks for your interest in WeaveUp! To help us assess your coding ability, we would like for you to complete this take-home coding project.
+Thanks for your interest in Some Company! To help us assess your coding ability, we would like for you to complete this take-home coding project.
 
 ## Color Kata
 
